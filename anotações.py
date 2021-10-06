@@ -15,3 +15,26 @@
 # é usado para omitir dados duplicados de uma tabela e retorna somente dados únicos.
 # sintaxe -> SELECT DISTINCT nome_da_coluna1, nome_da_coluna2 FROM nome_da_tabela
 # exemplo prático -> SELECT DISTINCT FirstName FROM Person.Person;
+
+
+'''WHERE'''
+# para extrair dados especificos de uma tabela podemos utilizar o comando where
+# sintaxe -> SELECT coluna1,coluna2,coluna3 FROM tabela WHERE condição
+# comentários em SQL são feitos usando -- ou /* e fechando com */
+# exemplo prático -> SELECT * FROM person.Person WHERE LastName = 'miller'
+# exemplo prático com operadores lógicos - SELECT * FROM person.Person WHERE LastName = 'miller' and FirstName = 'anna'
+# exemplo prático -> SELECT * FROM Production.Product WHERE Color = 'blue' or Color = 'black';
+# exemplo prático -> SELECT * FROM Production.Product WHERE ListPrice > 1500;
+# exemplo prático -> SELECT * FROM Production.Product WHERE ListPrice > 1500 and ListPrice < 5000;
+# exemplo prático -> SELECT * FROM Production.Product WHERE Color <> 'red';
+'''
+OPERADOR    DESCRIÇÃO
+=           IGUAL
+>           MAIOR QUE
+<           MENOR QUE
+>=          MAIOR QUE OU IGUAL
+<=          MENOR QUE OU IGUAL
+<>          DIFERENTE DE
+AND         OPERADOR LÓGICO E
+OR          OPERADOR LÓGICO OU  
+'''
