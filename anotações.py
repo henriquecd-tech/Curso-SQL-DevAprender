@@ -27,6 +27,7 @@
 # exemplo prático -> SELECT * FROM Production.Product WHERE ListPrice > 1500;
 # exemplo prático -> SELECT * FROM Production.Product WHERE ListPrice > 1500 and ListPrice < 5000;
 # exemplo prático -> SELECT * FROM Production.Product WHERE Color <> 'red';
+
 '''
 OPERADOR    DESCRIÇÃO
 =           IGUAL
@@ -45,3 +46,10 @@ OR          OPERADOR LÓGICO OU
 # selec count (distinct *) from tabela
 # exemplo prático -> select count(*) from Person.Person; (retorna a informação de que existem 19972) linhas nessa busca
 # exemplo prático -> select count (distinct title) from person.Person;
+
+
+'''Top'''
+# o comando top basicamente limita a quantidade de dados que é retornada em um select
+# é comum termos milhões de linhas em Dbs de grandes aplicações, o top nos ajuda a limitar a qutd de dados retornados
+# sintaxe selec top qtd_retornada from tabela -> select 10 * from tabela
+# select top 15 * from Production.Product;
