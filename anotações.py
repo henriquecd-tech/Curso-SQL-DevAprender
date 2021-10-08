@@ -61,4 +61,6 @@ OR          OPERADOR LÓGICO OU
 # exemplo prático -> select * from Person.Person order by FirstName desc;
 # exemplo prático -> select * from Person.Person order by FirstName asc, LastName desc;
 # exemplo prático -> select FirstName, LastName from Person.Person order by FirstName asc, LastName desc;
-# como boa prática, é importante inserir no select os parametros que serão usados no order by para ordenção. 
+# como boa prática, é importante inserir no select os parametros que serão usados no order by para ordenção.
+
+
