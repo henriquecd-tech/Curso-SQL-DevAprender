@@ -53,3 +53,12 @@ OR          OPERADOR LÓGICO OU
 # é comum termos milhões de linhas em Dbs de grandes aplicações, o top nos ajuda a limitar a qutd de dados retornados
 # sintaxe selec top qtd_retornada from tabela -> select 10 * from tabela
 # select top 15 * from Production.Product;
+
+'''ORDER BY'''
+# Ordey by permite que você ordene os resultados em alguma coluna de forma crescer ou decrescente
+# sintaxe -> select coluna1, coluna2, from tabela order by coluna1 asc/desc (ordenação crescente ou decrescente)
+# exemplo prático -> select * from Person.Person order by FirstName asc;
+# exemplo prático -> select * from Person.Person order by FirstName desc;
+# exemplo prático -> select * from Person.Person order by FirstName asc, LastName desc;
+# exemplo prático -> select FirstName, LastName from Person.Person order by FirstName asc, LastName desc;
+# como boa prática, é importante inserir no select os parametros que serão usados no order by para ordenção. 
