@@ -63,4 +63,53 @@ OR          OPERADOR LÓGICO OU
 # exemplo prático -> select FirstName, LastName from Person.Person order by FirstName asc, LastName desc;
 # como boa prática, é importante inserir no select os parametros que serão usados no order by para ordenção.
 
+'''BETWEEN'''
+# o between é usado para encontrar um valor entre um valor minimo e um valor máximo
+# sintaxe -> valor BETWEEN minimo AND máximo
+# valor >= minimo AND valor <= máximo
+# exemplo prático select * from Production.Product where ListPrice between 1000 and 1500;
+# exemplo prático usando o not -> select * from Production.Product where ListPrice  not between 1000 and 1500;
+'''retorna todos os valores que não esntre 1000 e 1500'''
+# também é possivel usar o between com datas
+# exemplo prático
+# select *
+# from HumanResources.Employee
+# where HireDate between '2009/01/01' and '2010/01/01';
 
+# exemplo prático
+# select *
+# from HumanResources.Employee
+# where HireDate between '2009/01/01' and '2010/01/01'
+# order by HireDate;
+
+'''IN'''
+# o operador in é usado junto com o where para verificar se um item corresponde a qualquer item na lista de valores
+# sintaxe -> valor IN (valor1, valor2)
+# color IN ('blue', 'black')
+# basicamente o IN faz uma busca no DB e sempre que ele retornar um valor que corresponde aos atributos passados, ele
+# retorna essas informações.
+# essa sintaxe tbm é utilziada valor IN (select valor from nomeDaTabela) -> isso e chamado de sub-select ou sub-query
+# exemplo prátco ->  select * from Person.Person where BusinessEntityID in (2,7,13);
+# essa é uma forma mais rápida e assertiva de buscar informações.
+'''
+COMAPARATIVO COM IN E SEM IN
+select * from Person.Person where BusinessEntityID in (2,7,13); (com in)
+x
+select * from Person.Person where BusinessEntityID = 2 or BusinessEntityID = 7 or BusinessEntityID = 13; (sem in)
+'''
+
+# é possivel usar o not para efeitos de negação(retorno todos os itens que não estão dentro da condição passada)
+
+'''LIKE'''
+# exemplo de aplicação prática; Você precisa achar um nome em que as três primeiras letras são ovi mas não sabe o resto"
+# é possivel montar uma query com o like para performar essa operação no db
+# select * from person,person firstname like 'ovi%'
+# o sinal de % é uma máscara e quer dizer que não importa o que venha depois, tudo que tenha ovi deve retornar.
+# exemplo prático -> select * from Person.Person where FirstName like 'ovi%';
+# exemplo prático com a máscara no inicio, retorna todos os nomes que terminal com o parametro passado
+# -> select * from Person.Person where FirstName like '%to';
+# exemplo prático com máscaras no inicio e no final para retornar todos os elementos que tem o parametro no meio
+# -> select * from Person.Person where FirstName like '%essa%';
+# exemplo prático para sinalizar apenas um caractere
+# -> select * from Person.Person where FirstName like '%ro_'
+# o like não é case sensitive no SQL
