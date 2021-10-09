@@ -130,3 +130,26 @@ select * from Person.Person where BusinessEntityID = 2 or BusinessEntityID = 7 o
 
 '''AVG'''
 # exemplo prático -> select top 10 avg(LineTotal) from Sales.SalesOrderDetail
+
+'''GROUP BY'''
+# o group by divide o resultado da pesquisa em grupos
+# exemplo... você pode aplicar uma função de agregação para grupos de pesquisa especificos
+# - calcular a soma dos itens
+# - contar o número de itens naquele grupo
+
+# sintaxe
+# select coluna1, funcaoAgregacao(coluna2) -> select em uma coluna, função de agre que será app em outra coluna
+# from nomeTabela # -> tabela que trará a info
+# group by coluna1; -> agrupar na coluna desejada.
+# exemplo prático -> select SpecialOfferID, sum (unitprice) from Sales.SalesOrderDetail group by SpecialOfferID
+# ex prático -> select ProductID, COUNT (ProductID) as 'contagem' from Sales.SalesOrderDetail group by ProductID
+# (agrupou os IDs do produto e conta quantas vezes esse id aparece no banco de dados)
+# https://paste.pics/6c9c5b7c99ce9b46ba9071913870f895
+# ex prático -> select FirstName, COUNT(FirstName) as 'repeticao de nome' from Person.Person group by FirstName
+'''
+selecionar a coluna que será retornada, a operação que deseja realizar e no final o agrupamento
+
+select color, AVG (ListPrice) as 'preço médio'
+from Production.Product
+group by Color
+'''
