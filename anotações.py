@@ -113,3 +113,20 @@ select * from Person.Person where BusinessEntityID = 2 or BusinessEntityID = 7 o
 # exemplo prático para sinalizar apenas um caractere
 # -> select * from Person.Person where FirstName like '%ro_'
 # o like não é case sensitive no SQL
+
+'''MIN, MAX, SUM, AVG'''
+# as funções min, max, sum e avg são as principais funções de agregação
+# funções de agregação -> agregam ou combinam dados de uma tabela em um único resultado
+# sum -> todas as linhas e retornar um resultado, assim como as outras
+'''SUM'''
+# exemplo práito -> select top 10 sum (LineTotal) from Sales.SalesOrderDetail
+# add 'apelidos' as colunas -> select top 10 sum (linetotal) as 'soma' from Sales.SalesOrderDetail
+
+'''MIN'''
+# exemplo prático -> select top 10 min(LineTotal) from Sales.SalesOrderDetail
+
+'''MAX'''
+# exemplo prático -> select top 10 max(LineTotal) from Sales.SalesOrderDetail
+
+'''AVG'''
+# exemplo prático -> select top 10 avg(LineTotal) from Sales.SalesOrderDetail
