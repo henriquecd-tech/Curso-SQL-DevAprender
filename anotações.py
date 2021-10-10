@@ -153,3 +153,25 @@ select color, AVG (ListPrice) as 'preço médio'
 from Production.Product
 group by Color
 '''
+
+'''HAVING'''
+# o having é utilizado junto com o group by para filtrar resultados que já estão agrupados.
+# é um tipo de 'where para dados agrupados'
+# sintaxe
+'''
+select coluna1, funcaoAgregacao(coluna2)
+from tabela
+group by coluna 1
+having condicao
+'''
+
+# a grande diferença entre having e where
+# o group by é app depois que os dados já foram agrupados, enquanto o where é app antes dos dados serem agrupados
+'''
+exemplo prático
+
+select ProductID, sum(LineTotal) as 'total de vendas por produto'
+from Sales.SalesOrderDetail
+group by ProductID
+having sum(LineTotal) between 162000 and 500000
+'''
