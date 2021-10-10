@@ -175,3 +175,16 @@ from Sales.SalesOrderDetail
 group by ProductID
 having sum(LineTotal) between 162000 and 500000
 '''
+
+'''AS'''
+# o AS serve para "apelidar" colunas, buscas e etc. É uma ferramenta bem flexivel no SQL
+'''
+Exemplos Práticos
+select top 10 ListPrice as 'Lista de Preço'
+from Production.Product
+
+select top 10 avg(listprice) as 'média de preço'
+from Production.Product
+'''
+
+
