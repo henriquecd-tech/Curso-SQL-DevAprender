@@ -41,7 +41,7 @@ OR          OPERADOR LÓGICO OU
 '''
 
 '''COUNT'''
-# O comando count serve para retornar / devolver o número de linhas que seencaixam em uma determinada condição
+# O comando count serve para retornar / devolver o número de linhas que se encaixam em uma determinada condição
 # # sintaxe -> select count (* ou nome da conluna. Tbm é possivel usar o distinct no inicio) from tabela
 # selec count (distinct *) from tabela
 # exemplo prático -> select count(*) from Person.Person; (retorna a informação de que existem 19972) linhas nessa busca
