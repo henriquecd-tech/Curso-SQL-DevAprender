@@ -188,3 +188,46 @@ from Production.Product
 '''
 
 
+'''INNER JOIN'''
+# o comando JOIN é dos mais usados quando se está trabalhando com querys e precisamos juntar infos de outras tabelas
+# até o momento trabalhamos com operações relacionadas a uma única tabela, o join vai nos ajudar a expandir esse
+# horizonte de operações com outras tabelas
+# existem 3 tipos gerais de joins: inner join, outer join e self join
+# cenário de aplicação
+'''
+imagine que você tenha duas tabelas: cliente (com as infos de clienteid, nome e enderecoid) 
+e a tabela Endereco (com as infos de enderecoid, rua e cidade) e precisa trazer infos da tabela endereco para a tabela
+cliente
+
+conceitos de chave primária e chave estrangeira
+'''
+
+# exemplo prático
+'''
+select c.clienteid, c.nome, e.rua, e.cidade
+from cliente c
+inner join endereco e on e.endeecoid = c.enderecoid
+'''
+
+# exemplo prático
+'''
+-- inner join
+select p.BusinessEntityID, p.FirstName, p.LastName, pe.EmailAddress
+from Person.Person as p
+inner join Person.EmailAddress as pe on p.BusinessEntityID = pe.BusinessEntityID
+'''
+
+# exemplo prático
+'''
+select p.Name, p.ProductSubcategoryID,  p.ListPrice
+from Production.Product as p
+inner join Production.ProductSubcategory as sb on p.ProductSubcategoryID = sb.ProductSubcategoryID
+'''
+
+# produto cartesiano -> junção de todas as infos
+# exemplo prático
+'''
+select *
+from Person.BusinessEntityAddress as ba
+inner join Person.Address as pa on pa.AddressID = ba.AddressID
+'''
