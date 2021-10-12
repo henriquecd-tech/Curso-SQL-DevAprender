@@ -231,3 +231,25 @@ select *
 from Person.BusinessEntityAddress as ba
 inner join Person.Address as pa on pa.AddressID = ba.AddressID
 '''
+
+'''TIPOS DE JOINS'''
+# https://terminalroot.com.br/2019/10/inner-join-left-join-right-join-mysql.html
+# quando estamos trabalhando com o join, temos que ter em mente a existência de dois lados; dir e esq
+# quando estamos trabalhando com o join na estrutura, a primeira tabela (no from) é o lado ESQUERDO
+# a tabela que será usada na estrutura do on é a tabela do lado direito (começamos da esquerda para a direita)
+
+'''INNER JOIN'''
+# retorna apenas os valores que existem em ambas as tabelas
+# https://paste.pics/484a6a599fd14edce48ffff6f905c663
+
+'''FULL OUTER JOIN'''
+# é considerado o join mais completo, retorna o conjunto de todos os registros correspondentes e preenche os valores
+# não correspondentes com null
+# https://paste.pics/c718eba9ac5db34f6d1b7e4f72b8d368
+
+
+'''LEFT E RIGHT OUTER JOIN'''
+# tem um conceito parecido com o full outer join mas exclui as informações do lado B (ou lado direito da operação)
+# retorna um conjunto de todos os registros da tabela A e os registros correndespontes das infos que estão na B tbm
+# quando não existe um valor correspondente, preenche com null
+# https://paste.pics/ade059144cdefd61711dc0f07913d381
