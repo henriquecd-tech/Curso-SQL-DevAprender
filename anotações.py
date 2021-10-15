@@ -253,3 +253,28 @@ inner join Person.Address as pa on pa.AddressID = ba.AddressID
 # retorna um conjunto de todos os registros da tabela A e os registros correndespontes das infos que estão na B tbm
 # quando não existe um valor correspondente, preenche com null
 # https://paste.pics/ade059144cdefd61711dc0f07913d381
+# exemplo práticp
+'''
+-- Quais pessoas tem um cartão de crédito registrado? 
+select *
+from Person.Person
+
+select * 
+from sales.PersonCreditCard
+
+select pp.BusinessEntityID, FirstName, pp.LastName, pc.CreditCardID
+from Person.Person as pp
+left join Sales.PersonCreditCard as pc on pp.BusinessEntityID = pc.BusinessEntityID
+
+para saber quais pessoas não possuem um cartão de crédito
+select pp.BusinessEntityID, FirstName, pp.LastName, pc.CreditCardID
+from Person.Person as pp
+left join Sales.PersonCreditCard as pc on pp.BusinessEntityID = pc.BusinessEntityID
+where pc.CreditCardID is null
+
+é importante usar o left join nesse cenário porque ele retorna como null os registros que não existem na outra tabela,
+diferente do inner join que se retornar os registros correspondentes nas duas tabelas
+usando inner join -> retorno de 19118 linhas
+usando o left join -> retorno de 19972 linhas (porque trouxe os valores que não estão registrados na outra tabela)
+'''
+
