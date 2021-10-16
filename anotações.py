@@ -278,3 +278,37 @@ usando inner join -> retorno de 19118 linhas
 usando o left join -> retorno de 19972 linhas (porque trouxe os valores que não estão registrados na outra tabela)
 '''
 
+'''UNION'''
+# o operador union combina dois ou mais resultados de um select em um único resultado
+# além de juntar as informações de tabelas diferentes, o union remove informações duplicadas
+# sintaxe
+# também é possivel ordenar o retorno das informações dadas pelo union como um única resultado
+'''
+select tabela1, tabela2
+from tabela1
+union
+select coluna1, coluna2
+from tabela2
+'''
+# exemplo prático
+'''
+select ProductID, Name, ProductNumber
+from Production.Product
+where Name like '%Chain%'
+union
+select ProductID, Name, ProductNumber
+from Production.Product
+where name like '%Decal%'
+order by Name
+'''
+
+# exemplo prático
+'''
+select FirstName, Title, MiddleName
+from Person.Person
+where Title = 'mr.'
+union
+select FirstName, Title, MiddleName
+from Person.Person
+where MiddleName = 'a'
+'''
