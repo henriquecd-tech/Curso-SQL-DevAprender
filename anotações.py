@@ -383,3 +383,58 @@ round(coluna onde os valores serão arrendodados, precisão / casas decimais)
 select SQRT(LineTotal) as 'raiz quadrada'
 from Sales.SalesOrderDetail
 '''
+
+'''SUBQUERIES / SUBSELECT'''
+# resumidamente, permite trabalhar com um select dentro de outro.
+
+#exemplo prático
+
+'''
+-- monte um relatório de todos os produtos cadastrados que tem o preço de venda acima da média
+
+-- sem subquery
+
+-- 1º encontrar a média
+select AVG(ListPrice)
+from Production.Product
+
+-- 2º montar a query
+select *
+from Production.Product
+where ListPrice > 438.66
+
+
+-- com subquery
+select *
+from Production.Product
+where ListPrice > (select AVG(ListPrice) from Production.Product)
+'''
+
+# exemplo prático
+
+'''
+-- gostaria de obter o nome de todos os funcionários que tem o cargo de design enginner
+
+select *
+from Person.Person
+
+select *
+from HumanResources.Employee
+
+select FirstName, LastName
+from Person.Person
+where BusinessEntityID in (
+select BusinessEntityID
+from HumanResources.Employee
+where JobTitle = 'design engineer'
+)
+
+alternativa com inner join
+
+select p.FirstName
+from Person.Person as p
+inner join HumanResources.Employee as e on p.BusinessEntityID = e.BusinessEntityID
+and e.JobTitle = 'design engineer'
+
+p.s: incluir e verificar plano de execução para observar a performance das querys.
+'''
