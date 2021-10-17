@@ -312,3 +312,53 @@ select FirstName, Title, MiddleName
 from Person.Person
 where MiddleName = 'a'
 '''
+
+'''DATEPART'''
+# a função datepart permite extrair diversas infos de uma coluna que tem o tipo data.
+# link documentação -> https://docs.microsoft.com/pt-br/sql/t-sql/functions/datepart-transact-sql?view=sql-server-ver15
+# exemplo prático
+'''
+select SalesOrderID, DATEPART(MONTH, OrderDate) as 'mês de venda'
+from Sales.SalesOrderHeader
+
+select coluna1, datepart(tipo de info, onde eu vou buscar essa info) as apelido
+from tabela que contém a info
+'''
+
+'''MANIPULAÇÃO DE STRINGS'''
+# doc-> https://docs.microsoft.com/pt-br/sql/t-sql/functions/string-functions-transact-sql?view=sql-server-ver15
+
+# exemplo prático
+# concatenação
+'''
+select CONCAT(FirstName, ' ', LastName)
+from Person.Person
+'''
+
+# funções upper e lower
+'''
+select UPPER(FirstName), LOWER(LastName)
+from Person.Person
+'''
+
+# contagem de caracteres
+'''
+select FirstName,LEN(FirstName)
+from Person.Person
+'''
+
+# função substring (extrai informações de uma string)
+'''
+select FirstName,SUBSTRING(FirstName, 1, 3) as 'iniciais'
+from Person.Person
+
+substring(coluna onde buscar a string, indice inicio, inidice final)
+'''
+
+# Replace -> substitui um item na string
+'''
+select ProductNumber, REPLACE(ProductNumber, '-', '#') as 'usando replace'
+from Production.Product
+
+replace(coluna onde vai fazer a substituição, 'string que será subs', 'nova string')
+'''
