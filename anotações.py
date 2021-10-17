@@ -362,3 +362,24 @@ from Production.Product
 
 replace(coluna onde vai fazer a substituição, 'string que será subs', 'nova string')
 '''
+
+'''FUNÇÕES MATEMÁTICAS EM SQL'''
+# Soma, subtração, divisão, multiplicação seguem a mesma lógica.
+'''
+select UnitPrice + LineTotal as 'ops soma'
+from Sales.SalesOrderDetail
+'''
+
+# função round -> arredondamento de valores
+'''
+select LineTotal, ROUND(LineTotal,2) as 'round function'
+from Sales.SalesOrderDetail
+
+round(coluna onde os valores serão arrendodados, precisão / casas decimais)
+'''
+
+# função sqrt -. raiz quadrada
+'''
+select SQRT(LineTotal) as 'raiz quadrada'
+from Sales.SalesOrderDetail
+'''
