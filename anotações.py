@@ -438,3 +438,28 @@ and e.JobTitle = 'design engineer'
 
 p.s: incluir e verificar plano de execução para observar a performance das querys.
 '''
+
+
+'''SELF JOIN'''
+# O self join é uma forma de agrupar / organizar dados dentro de uma mesma tabela
+# só é possivel usar o self join com o as (apelido)
+# sintaxe
+'''
+select nome_coluna
+from tabela a, tabela b
+where condição
+'''
+
+# exemplo prático
+'''
+select a.ContactName, a.Region, b.ContactName, b.Region
+from Customers as a, Customers as b
+where a.Region = b.Region
+'''
+
+# exemplo prático
+'''
+select a.FirstName, a.LastName, b.HireDate
+from Employees as a, Employees b
+where DATEPART(year, a.HireDate) = datepart (year, b.HireDate)
+'''
