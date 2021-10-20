@@ -463,3 +463,33 @@ select a.FirstName, a.LastName, b.HireDate
 from Employees as a, Employees b
 where DATEPART(year, a.HireDate) = datepart (year, b.HireDate)
 '''
+
+'''TIPOS DE DADOS'''
+'''boleanos'''
+# por padrão, é iniciado como nulo, pode receber 1 ou 0 / tipo BIT
+
+'''caracteres'''
+# tamanho fixo - char / permite inserir até uma qtd fixa de caracteres e sempre ocupa o espaço reservado tamanhos
+# variaveis (varchar / n varchar -> permite até uma qtd que for definida, porém só usa o espaço que for usado'''
+
+'''números'''
+# valores exatos
+# - tinyint - valores inteiros, sem números fracionados
+# - smalint - inteiros, limite maior
+# - int - inteiros, limite maior
+# - bigint - inteiros, limite maior
+
+# numeric ou decimal -> permitem trabalhar com números fracionados, podendo trabalhar com precisão e escala
+
+# valores aproximados
+# - real - precisão aproximada de até 15 digitos (digitos são os valores após a ,)
+# - float - mesmo conceito do real
+
+
+# temporais
+# date - armazena data no formato de aaaa/mm/dd
+# datetime - armazena data e hora no formato aaaa/mm/dd:hh:mm:ss
+# datetime2 - adiciona milissegundos ao formato anterior
+# smalldatetime - armazena data e hora respeitando um limite determinado
+# time - armazeza horas, minitos e milissegundos dentro de um determinado limite
+# datetimeoffset - datas e horas mas inclui fuso horário
