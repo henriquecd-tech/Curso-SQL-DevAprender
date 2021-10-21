@@ -187,7 +187,6 @@ select top 10 avg(listprice) as 'média de preço'
 from Production.Product
 '''
 
-
 '''INNER JOIN'''
 # o comando JOIN é dos mais usados quando se está trabalhando com querys e precisamos juntar infos de outras tabelas
 # até o momento trabalhamos com operações relacionadas a uma única tabela, o join vai nos ajudar a expandir esse
@@ -387,7 +386,7 @@ from Sales.SalesOrderDetail
 '''SUBQUERIES / SUBSELECT'''
 # resumidamente, permite trabalhar com um select dentro de outro.
 
-#exemplo prático
+# exemplo prático
 
 '''
 -- monte um relatório de todos os produtos cadastrados que tem o preço de venda acima da média
@@ -438,7 +437,6 @@ and e.JobTitle = 'design engineer'
 
 p.s: incluir e verificar plano de execução para observar a performance das querys.
 '''
-
 
 '''SELF JOIN'''
 # O self join é uma forma de agrupar / organizar dados dentro de uma mesma tabela
@@ -493,3 +491,29 @@ where DATEPART(year, a.HireDate) = datepart (year, b.HireDate)
 # smalldatetime - armazena data e hora respeitando um limite determinado
 # time - armazeza horas, minitos e milissegundos dentro de um determinado limite
 # datetimeoffset - datas e horas mas inclui fuso horário
+
+
+'''CHAVE PRIMARIA E ESTRANGEIRA'''
+# chave primária é basicamente uma coluna ou grupo de colunas usada para identificar unicamente uma linha em uma tabela
+# é possivel criar chaves primárias através de restrições (constraints), que são regras definidas ao criar uma coluna
+# dessa forma cria-se um índice único para aquela coluna / grupo de colunas
+
+# sintaxe
+'''
+CREATE TABLE nome_tabela (
+    nomeColuna tipoDeDados PRIMARY KEY
+    nomeColuna tipoDeDados ...
+)
+'''
+
+# chave estrangeira é uma coluna / grupo de colunas em uma tabela que identifica de forma única uma linha
+# uma chave estrangeira é definida em uma tabela onde ela é apenas uma referência e não contém todos os dados
+# chave estrangeira é uma coluna / grupo de colunas que é uma chave primária em outra tabela, uma referêcncia
+# a tabela que contém a chave estrangeira é a tabela referenciadora / tabela filho
+# a tabela que contém a chave primária é a tabela pai / tabela referenciada.
+# uma tabela pode ter mais de uma chave estrangeira dependendo do seu relacionamento com as outras tabelas
+
+# no SQL definimos uma chave estrangeira através de uma foreign key constrait ou restrição de chave estrangeira
+# uma restrição de chave estrangeira indica que os valores em uma coluna ou grupo de colunas correspondem aos valores
+# da tabela pai.
+# uma chave estrangeira nos ajuda a manter a integridade referencial dos bancos de dados.
