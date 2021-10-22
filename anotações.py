@@ -517,3 +517,54 @@ CREATE TABLE nome_tabela (
 # uma restrição de chave estrangeira indica que os valores em uma coluna ou grupo de colunas correspondem aos valores
 # da tabela pai.
 # uma chave estrangeira nos ajuda a manter a integridade referencial dos bancos de dados.
+
+
+'''CREATE TABLE'''
+#sintaxe
+'''
+CREATE TABLE nomeTabela (
+    coluna1, tipoDeDado, restricaoDaColuna(se houver)
+    coluna2, tipoDeDado, restricaoDaColuna(se houver)
+    coluna3, tipoDeDado, restricaoDaColuna(se houver)
+);
+'''
+
+# tipos de restriçoes no SQL
+# not null -> não permite valor nulos (dispara um erro se não houver um valor)
+# unique -> força todos os valores de uma coluna a serem diferentes
+# primary key -> junção de not null e unique
+# foreigh key -> identifica uma unica linha em outra tabela
+# check -> força uma condição especifica em uma coluna
+# default -> força um valor padrão quando nenhum valor é passado
+
+# exemplo
+# https://paste.pics/8ad0dcbd8101b6be31d5c24fdc942866
+
+# exemplo
+'''
+create table canal (
+	canalid int primary key,
+	nome varchar(150) not null,
+	contagemInscritos int default 0,
+	dataCriacao datetime not null
+);
+
+select *
+from canal
+'''
+
+# exemplo
+'''
+create table video (
+	videoid int primary key,
+	nome varchar(150) not null,
+	vizualizacoes int default 0,
+	likes int default 0,
+	dislikes int default 0,
+	duracao int default 0 not null,
+	canalid int foreign key references canal(canalid) 
+);
+
+select *
+from video
+'''
