@@ -637,3 +637,19 @@ where id = 3
 select *
 from aula
 '''
+
+
+'''DELETE'''
+# delete serve para apagar linhas do banco
+# deve ser usado junto com uma condição para não apagar todas as linhas
+# sintaxe
+'''
+DELETE FROM nomeTabela
+Where condicao
+'''
+
+# exemplo prático
+'''
+delete from aula
+where nome = 'mudei'
+'''
