@@ -568,3 +568,41 @@ create table video (
 select *
 from video
 '''
+
+
+'''INSERT INTO'''
+# insert into pode ser usado em uma tabela já criada onde se deseja inserir novos dados ou em uma tabela nova sem dados.
+# sintaxe
+'''
+INSERT INTO nomeTabela (coluna1, coluna2,...)
+VALUES (valor1, valor2, ...)
+'''
+
+# para inserir informações de outra tabela em uma tabela existente
+'''
+INSERT INTO tabelaA (coluna1)
+SELET coluna2
+FROM tabelaB
+'''
+
+# exemplo prático
+'''
+insert into aula (id, nome)
+values(1, 'aula 1')
+
+select *
+from aula
+'''
+
+# exemplo prático (add várias linhas)
+'''
+insert into aula (id, nome)
+values
+(2, 'aula 2'),
+(3, 'aula 3'),
+(4, 'aula 4'),
+(5, 'aula 5')
+
+select *
+from aula
+'''
