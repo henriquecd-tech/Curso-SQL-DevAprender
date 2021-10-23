@@ -606,3 +606,34 @@ values
 select *
 from aula
 '''
+
+
+'''UPDATE'''
+# serve para atualizar linhas do banco de dados (pode ser aplicado a uma única linha ou várias)
+# caso a ideia não seja alterar todas as linhas do banco, é necessário aplicar um WHERE e uma condição
+#sintaxe
+'''
+UPDATE nomeTabela
+SET coluna1 = valor1
+    coluna2 = valor2
+WHERE condicao
+'''
+
+# exemplo prático
+'''
+update aula
+set nome = 'teste'
+
+
+select *
+from aula
+
+--------------------------------------------------------------------
+
+update aula
+set nome = 'mudei'
+where id = 3
+
+select *
+from aula
+'''
