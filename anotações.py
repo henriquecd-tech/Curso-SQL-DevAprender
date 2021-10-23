@@ -653,3 +653,46 @@ Where condicao
 delete from aula
 where nome = 'mudei'
 '''
+
+'''ALTER TABLE'''
+# o alter table altera a estrutura de uma tabela
+# sintaxe
+'''
+alter table nomeDaTabela
+AÇÂO (todas as condições que devem ser alteradas)
+'''
+# exemplo de ações que podem ser realizadas
+# add, remover ou alterar uma coluna
+# setar valores padrões para uma coluna
+# add ou remover restrições de colunas
+# renomear uma tabela
+
+# exemplo prático
+
+'''
+1º Criação de uma tabela
+
+create table youtube (
+	id int primary key,
+	nome varchar (150) not null unique,
+	categoria varchar (200) not null,
+	dataCriacao datetime not null
+);
+
+2º add uma coluna na tabela
+
+alter table youtube
+add ativo bit
+
+3º alterando o limite da coluna categoria
+alter table youtube
+alter column categoria varchar (300) not null
+'''
+
+# para alterar o nome de uma coluna
+# EXEC sp_RENAME 'nomeTabela.nomeColunaAtual', 'nome'ColunaNova','COLUMN'
+# exec sp_rename 'youtube.nome', 'nomeCanal', 'COLUMN' (alteração da coluna nome para nomeCanal
+
+# para alterar o nome da tabela
+# EXEC sp_RENAME 'nomeTabelaAtual', 'nomeTabelaNova
+# # exec sp_rename 'youtube', 'youtube2-> alterando o nome da tabela youtube para youtube2
