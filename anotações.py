@@ -696,3 +696,16 @@ alter column categoria varchar (300) not null
 # para alterar o nome da tabela
 # EXEC sp_RENAME 'nomeTabelaAtual', 'nomeTabelaNova
 # # exec sp_rename 'youtube', 'youtube2-> alterando o nome da tabela youtube para youtube2
+
+
+'''DROP TABLE'''
+# o comando drp exclui uma tabela do banco de dados.
+# sintaxe
+# só é possivel excluir tabelas que não são referenciadas por outras tabelas;
+'''
+drop table nomeDaTabela
+'''
+
+# para apagar apenas o conteúdo de uma tabela podemos usar o comando truncate
+# sintaxe
+# truncate table nomeDaTabela
