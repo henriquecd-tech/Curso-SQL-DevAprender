@@ -727,3 +727,18 @@ create table CarteiraMotorista (
 
 '''NOT NULL CONSTRAINT'''
 # not null força a inserção de dados em uma determinada coluna/tabela
+
+
+'''UNIQUE CONSTRAINT'''
+# a diferença entre o primary key e o unique é que a unique pode ser aplicada em quantas colunas forem necessárias
+# diferente da primary key que só pode ser usada uma única vez
+# a unique nega valores repetidos dentro de uma tabela
+# exemplo prático
+'''
+create table CarteiraMotorista (
+	id int not null,
+	nome varchar not null,
+	idade int,
+	codigoCNH int not null unique
+);
+'''
