@@ -709,3 +709,17 @@ drop table nomeDaTabela
 # para apagar apenas o conteúdo de uma tabela podemos usar o comando truncate
 # sintaxe
 # truncate table nomeDaTabela
+
+
+'''CHECK CONSTRAINT'''
+# o comando check constraint ajuda a criar restrições de valores que podem ser inseridos em uma coluna de tabela
+# sintaxe
+'''
+create table CarteiraMotorista (
+    id int not null,
+    nome varchar(255) not null,
+    idade int CHECK (idade >= 18)
+);
+'''
+
+# https://paste.pics/a3d20f009571b721622f71da72988bb9
