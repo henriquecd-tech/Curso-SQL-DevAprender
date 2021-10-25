@@ -723,3 +723,7 @@ create table CarteiraMotorista (
 '''
 
 # https://paste.pics/a3d20f009571b721622f71da72988bb9
+
+
+'''NOT NULL CONSTRAINT'''
+# not null força a inserção de dados em uma determinada coluna/tabela
