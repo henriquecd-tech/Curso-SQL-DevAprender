@@ -742,3 +742,25 @@ create table CarteiraMotorista (
 	codigoCNH int not null unique
 );
 '''
+
+
+'''VIEWS'''
+# views são tabelas criadas para consulta onde podemos usar outras tabelas como base para criar uma nova tabela
+# de pesquisa com dados especificos
+# extrai informações especificar de uma tabela
+
+# sintaxe
+'''
+create view [nome que será dado a view] as
+select firstname, middlename, lastname
+from person.person
+where title = 'ms.'
+
+create view [nome completo] as 
+select FirstName, MiddleName, LastName
+from Person.Person
+where Title = 'mr.'
+
+select *
+from [nome completo]
+'''
